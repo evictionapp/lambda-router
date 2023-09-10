@@ -37,7 +37,7 @@ enum MyError {}
 
 #[router(POST "/my_route")]
 async fn my_route(input: Input) -> Result<Output, MyError> {
-todo!();
+    todo!();
 }
 ```
 
@@ -50,11 +50,11 @@ use lambda_http::{Body, Error, Request, Response};
 use lambda_router::{app, not_found};
 
 async fn function_handler(event: Request) -> Result<Response<Body>, Error> {
-app! {
-event,
-my_route, #[default]
-not_found,
-}
+    app! {
+        event,
+        my_route, #[default]
+        not_found,
+    }
 }
 ```
 
@@ -66,7 +66,7 @@ if you just want to return a simple 404 with no body when a request comes in tha
 use lambda_http::{Body, Error, Request, Response};
 
 async fn my_custom_404(event: Request) -> Result<Response<Body>, Error> {
-todo!();
+    todo!();
 }
 ```
 ````
