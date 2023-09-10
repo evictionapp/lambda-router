@@ -1,6 +1,6 @@
 [package]
 name = "lambda-router"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 description = "lambda-router is a simple library to help with routing http-api-gateway requests to handlers in the same lambda that receive and return json."
@@ -10,7 +10,7 @@ readme = "../README.md"
 
 
 [dependencies]
-lambda-router-macros = { version = "0.1.0", path = "../lambda-router-macros" }
+lambda-router-macros = { path = "../lambda-router-macros" }
 lambda_http = "0.8.1"
 serde = { version = "1.0.188", features = ["derive"] }
 serde_json = "1.0.106"
