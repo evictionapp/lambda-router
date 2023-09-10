@@ -21,7 +21,7 @@ First make sure to create a `api gateway endpoint` that is **http**
 
 Get started by creating a handler using the `router` macro
 
-`rust
+````rust
 use lambda_router::router;
 use serde::{Serialize, Deserialize};
 
@@ -39,12 +39,12 @@ enum MyError {}
 async fn my_route(input: Input) -> Result<Output, MyError> {
 todo!();
 }
-`
+```
 
 # Creating the actual routing logic
 
 inside your entry point to your lambda function that gets the request you use the `app` macro to automate writing the if statements that route requests to handlers
-`rust
+```rust
 use lambda_http::{Body, Error, Request, Response};
 // not_found is a fallback route that returns 404 and no body. it is provided for simple 404 responses, you can read about it below.
 use lambda_router::{app, not_found};
@@ -54,18 +54,19 @@ app! {
 event,
 my_route, #[default]
 not_found,
-}  
 }
-`
+}
+```
 
 # 404 not found fallback
 
 if you just want to return a simple 404 with no body when a request comes in that doesn't match anything, you can use the **not_found** pre-built default router used above. You can also impl your own like this:
 
-`rust
+```rust
 use lambda_http::{Body, Error, Request, Response};
 
 async fn my_custom_404(event: Request) -> Result<Response<Body>, Error> {
-todo!();  
+todo!();
 }
-`
+```
+````
