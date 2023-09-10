@@ -1,0 +1,18 @@
+[package]
+name = "lambda-router-macros"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Macros for use within lambda-router crate"
+homepage = "https://github.com/evictionapp/lambda-router"
+repository = "https://github.com/evictionapp/lambda-router"
+readme = "../README.md"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+lazy-regex = "3.0.1"
+proc-macro2 = "1.0.66"
+quote = "1.0.33"
+syn = { version = "2.0.31", features = ["extra-traits", "full"] }

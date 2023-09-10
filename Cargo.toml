@@ -1,0 +1,2 @@
+[workspace]
+members = ["lambda-router", "lambda-router-macros", "lambda-router-tests"]

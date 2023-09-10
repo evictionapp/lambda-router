@@ -1,0 +1,11 @@
+[package]
+name = "lambda-router-tests"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+
+[dependencies]
+lambda-router = { version = "0.1.0", path = "../lambda-router" }
+lambda_http = "0.8.1"
+serde = { version = "1.0.188", features = ["derive"] }
