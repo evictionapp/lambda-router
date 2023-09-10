@@ -32,7 +32,8 @@ struct Input {}
 struct Output {}
 
 // you may want to consider using "thiserror" and "serde_with" crate to handle errors
-// and serialization when variants or other data structures in your error don't impl Serialize #[derive(Serialize)]
+// and serialization when variants or other data structures in your error don't impl Serialize
+#[derive(Serialize)]
 enum MyError {}
 
 #[router(POST "/my_route")]
