@@ -1,3 +1,6 @@
+//! # not_found
+//! a simple 404 response with no body for convenience
+
 use lambda_http::{Body, Error, Request, Response};
 
 /// a simple 404 response when no routes are matched. provided as a convenience

@@ -1,3 +1,6 @@
+//! # json
+//! a re-export of serde_json with error wrapping and only operates on Result<T, E> where T & E impl Serialize
+
 use serde::Serialize;
 
 use super::error::Error;

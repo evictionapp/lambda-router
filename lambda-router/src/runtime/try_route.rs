@@ -1,3 +1,6 @@
+//! # try_route
+//! "tries" to match a route and method to a request, also tries to deserialize inputs if the routes and methods check out.
+
 use lambda_http::{http::Method, RequestExt, RequestPayloadExt};
 use serde::de::DeserializeOwned;
 

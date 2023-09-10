@@ -1,3 +1,7 @@
+//! # error
+//! a series of different errors that can occur
+//! most handle de/serialization errors
+
 use lambda_http::ext::PayloadError;
 use serde::Serialize;
 use serde_with::{serde_as, DisplayFromStr};
@@ -27,6 +31,8 @@ pub enum Error {
     Payload(#[serde_as(as = "DisplayFromStr")] PayloadError),
 
     /// the route did not match what was expected
+    /// this variant will never bubble, because it's "caught" by the default_router which
+    /// if not provided will cause a compiler_error from the **router** macro
     #[error("not found")]
     NotFound,
 
@@ -40,10 +46,12 @@ pub enum Error {
 }
 
 impl Error {
+    /// checks if not found 404
     pub fn is_not_found(&self) -> bool {
         matches!(self, Self::NotFound)
     }
 
+    /// convert errors to status codes
     pub fn status_code(&self) -> u16 {
         match self {
             Self::NotFound => 404,
@@ -52,6 +60,7 @@ impl Error {
         }
     }
 
+    /// wraps the error in a Result<(), Error> and serializes as json
     pub fn json(&self) -> Result<String, Self> {
         let err: Result<(), &Self> = Err(self);
         Ok(serde_json::to_string(&err)?)
