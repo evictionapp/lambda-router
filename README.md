@@ -54,7 +54,8 @@ use lambda_router::{app, not_found};
 async fn function_handler(event: Request) -> Result<Response<Body>, Error> {
     app! {
         event,
-        my_route, #[default]
+        my_route,
+        #[default]
         not_found,
     }
 }
