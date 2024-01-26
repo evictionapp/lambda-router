@@ -1,2 +1,3 @@
 [workspace]
+resolver = "2"
 members = ["lambda-router", "lambda-router-macros", "lambda-router-tests"]
