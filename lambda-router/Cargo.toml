@@ -9,7 +9,7 @@ repository = "https://github.com/evictionapp/lambda-router"
 readme = "../README.md"
 
 [dependencies]
-lambda-router-macros = { version = "0.1.1", path = "../lambda-router-macros" }
+lambda-router-macros = { version = "0.1.2", path = "../lambda-router-macros" }
 lambda_http = "0.11.1"
 serde = { version = "1.0.200", features = ["derive"] }
 serde_json = "1.0.116"
