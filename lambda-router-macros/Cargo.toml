@@ -12,7 +12,7 @@ readme = "../README.md"
 proc-macro = true
 
 [dependencies]
-lazy-regex = "3.0.1"
-proc-macro2 = "1.0.66"
-quote = "1.0.33"
-syn = { version = "2.0.31", features = ["extra-traits", "full"] }
+lazy-regex = "3.1.0"
+proc-macro2 = "1.0.81"
+quote = "1.0.36"
+syn = { version = "2.0.60", features = ["extra-traits", "full"] }
