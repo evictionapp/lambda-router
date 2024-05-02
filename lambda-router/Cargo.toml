@@ -1,6 +1,6 @@
 [package]
 name = "lambda-router"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 license = "MIT"
 description = "lambda-router is a simple library to help with routing http-api-gateway requests to handlers in the same lambda that receive and return json."
